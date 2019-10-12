@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="js/js.js"></script>
+
+<style>
+ul{
+    list-style: none;
+}
+.list{
+    padding-right: 10rem;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+
+    <script>
+
+        let mawin = {
+
+            mawin1: {
+                model: 'Land Rover Discovery',
+                il: '2015',
+                ban: 'sedan',
+                reng: 'ag',
+                Mator: '3.5L',
+                'Muherrikin hecmi': '272 a.g',
+                nagd: 60000,
+                kredit: 20000,
+                yuruw: '27000 km',
+                tarix: '27.07.2019'
+
+            }
+        }
+
+
+
+
+
+        let as = localStorage['cars'];
+        let obj = JSON.parse(as);
+
+        let mainDiv = create('div', ['card','w-50'], 'body');
+
+
+        let img = create('img', ['card-img-top'], mainDiv);
+        img.src = 'image/Без названия.jpg';
+
+        let cardBody = create('div', ['card-body'], mainDiv);
+        let headText = create('h5', ['card-title'], cardBody);
+        headText.innerText = obj.model;
+
+        let ul1 = create('ul', ['float-left'], cardBody);
+        let ul2 = create('ul', '', cardBody);
+
+
+        for (let i in mawin) {
+            for (let a in mawin[i]) {
+                //   cardBody.innerText += (mawin[i][a]) + " " + a;
+                let list1 = create('li', ['list'], ul1);
+                list1.innerText = a;
+
+                let list2 = create('li', '', ul2);
+                list2.innerText = (mawin[i][a]);
+            }
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
